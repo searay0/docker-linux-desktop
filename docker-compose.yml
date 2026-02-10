@@ -1,0 +1,20 @@
+services:
+  x:
+    image: docker-xfce
+    build:
+      context: .
+      dockerfile: Dockerfile
+    hostname: hacktainer
+    cap_add:
+      - ALL
+    volumes:
+      - .:/z
+      # - storage:/storage
+    ports:
+      - "3390:3390"
+    # extra_hosts:
+    #   - "host.docker.internal:host-gateway"
+    # profiles:
+    #   - testing
+    # volumes:
+    #   storage:
